@@ -59,8 +59,8 @@ class CacheFeedUseCaseTests: XCTestCase {
     }
     
     func test_save_requestsCacheDeletion() {
+        let items = [uniqueItem(), uniqueItem()]
         let (sut, store) = makeSUT()
-        let items = [uniqueItem()]
         
         sut.save(items)
         
@@ -68,8 +68,8 @@ class CacheFeedUseCaseTests: XCTestCase {
     }
     
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
+        let items = [uniqueItem(), uniqueItem()]
         let (sut, store) = makeSUT()
-        let items = [uniqueItem()]
         let deletionError = anyNSError()
         
         sut.save(items)
@@ -79,8 +79,8 @@ class CacheFeedUseCaseTests: XCTestCase {
     }
     
     func test_save_requestsNewCacheInsertionOnSuccessfulDeletion() {
+        let items = [uniqueItem(), uniqueItem()]
         let (sut, store) = makeSUT()
-        let items = [uniqueItem()]
         
         sut.save(items)
         store.completeDeletionSuccessfully()
@@ -93,8 +93,10 @@ class CacheFeedUseCaseTests: XCTestCase {
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStore) {
         let store = FeedStore()
         let sut = LocalFeedLoader(store: store)
+        
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
+        
         return (sut, store)
     }
     
