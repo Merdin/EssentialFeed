@@ -122,7 +122,7 @@ final class CodableFeedStoreTests: XCTestCase {
 
 		let deletionError = deleteCache(from: sut)
 
-		XCTAssertNotNil(deletionError, "Expected ache deletion to fail")
+		XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
 	}
 	
 	func test_storeSideEffects_runSerially() {
