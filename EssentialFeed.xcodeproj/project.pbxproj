@@ -134,6 +134,15 @@
 			path = FeedStoreSpecs;
 			sourceTree = "<group>";
 		};
+		D32B6B1C2A82B2EB00D31CF7 /* Test Plans */ = {
+			isa = PBXGroup;
+			children = (
+				D3740F3D2A7C190300F23B18 /* CI.xctestplan */,
+				D3740F2D2A7C0DE600F23B18 /* EssentialFeed.xctestplan */,
+			);
+			path = "Test Plans";
+			sourceTree = "<group>";
+		};
 		D3740F332A7C100C00F23B18 /* EssentialFeedAPIEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +218,7 @@
 		D3EC351D2A532C0000B4F797 = {
 			isa = PBXGroup;
 			children = (
-				D3740F3D2A7C190300F23B18 /* CI.xctestplan */,
-				D3740F2D2A7C0DE600F23B18 /* EssentialFeed.xctestplan */,
+				D32B6B1C2A82B2EB00D31CF7 /* Test Plans */,
 				D3EC35292A532C0000B4F797 /* EssentialFeed */,
 				D3EC35332A532C0100B4F797 /* EssentialFeedTests */,
 				D3740F332A7C100C00F23B18 /* EssentialFeedAPIEndToEndTests */,
