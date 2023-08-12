@@ -93,6 +93,7 @@
 		D34F13AD2A7FCA4100AC9DB7 /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		D34F13AF2A7FCCE200AC9DB7 /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		D34F13B12A7FCD8E00AC9DB7 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		D352EC832A87A74D0089FEE9 /* EssentialFeedAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
 		D3740F2D2A7C0DE600F23B18 /* EssentialFeed.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeed.xctestplan; sourceTree = "<group>"; };
 		D3740F322A7C100C00F23B18 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3740F342A7C100C00F23B18 /* EssentialFeedAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedAPIEndToEndTests.swift; sourceTree = "<group>"; };
@@ -168,9 +169,10 @@
 		D32B6B1C2A82B2EB00D31CF7 /* Test Plans */ = {
 			isa = PBXGroup;
 			children = (
+				D3740F2D2A7C0DE600F23B18 /* EssentialFeed.xctestplan */,
+				D352EC832A87A74D0089FEE9 /* EssentialFeedAPIEndToEndTests.xctestplan */,
 				D32B6B412A82D5F500D31CF7 /* EssentialFeedCacheIntegrationTests.xctestplan */,
 				D3740F3D2A7C190300F23B18 /* CI.xctestplan */,
-				D3740F2D2A7C0DE600F23B18 /* EssentialFeed.xctestplan */,
 			);
 			path = "Test Plans";
 			sourceTree = "<group>";
@@ -618,6 +620,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.merdin.EssentialFeedAPIEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
@@ -633,6 +636,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.merdin.EssentialFeedAPIEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
