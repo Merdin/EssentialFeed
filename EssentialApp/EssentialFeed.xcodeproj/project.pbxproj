@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D300A9982A8A57C600D0F842 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A9972A8A57C600D0F842 /* FeedImageDataLoader.swift */; };
 		D300A9A02A8A58F700D0F842 /* LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A99F2A8A58F700D0F842 /* LoaderSpy.swift */; };
+		D300A9A32A8A597900D0F842 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A9A22A8A597900D0F842 /* UIButton+TestHelpers.swift */; };
 		D32B6B122A829EE300D31CF7 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B6B112A829EE300D31CF7 /* FeedStoreSpecs.swift */; };
 		D32B6B142A829F5300D31CF7 /* XCTestCase+FeedStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B6B132A829F5300D31CF7 /* XCTestCase+FeedStoreSpec.swift */; };
 		D32B6B162A82B15B00D31CF7 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B6B152A82B15B00D31CF7 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
@@ -102,6 +103,7 @@
 /* Begin PBXFileReference section */
 		D300A9972A8A57C600D0F842 /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 		D300A99F2A8A58F700D0F842 /* LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSpy.swift; sourceTree = "<group>"; };
+		D300A9A22A8A597900D0F842 /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		D32B6B112A829EE300D31CF7 /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		D32B6B132A829F5300D31CF7 /* XCTestCase+FeedStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpec.swift"; sourceTree = "<group>"; };
 		D32B6B152A82B15B00D31CF7 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				D300A99F2A8A58F700D0F842 /* LoaderSpy.swift */,
+				D300A9A22A8A597900D0F842 /* UIButton+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D300A9A02A8A58F700D0F842 /* LoaderSpy.swift in Sources */,
+				D300A9A32A8A597900D0F842 /* UIButton+TestHelpers.swift in Sources */,
 				D352ECA32A87B3040089FEE9 /* FeedViewControllerTests.swift in Sources */,
 				D352ECAA2A87B58E0089FEE9 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
