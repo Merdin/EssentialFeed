@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D300A9982A8A57C600D0F842 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A9972A8A57C600D0F842 /* FeedImageDataLoader.swift */; };
 		D300A9A02A8A58F700D0F842 /* FeedViewControllerTests+LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A99F2A8A58F700D0F842 /* FeedViewControllerTests+LoaderSpy.swift */; };
 		D300A9A32A8A597900D0F842 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A9A22A8A597900D0F842 /* UIButton+TestHelpers.swift */; };
 		D300A9A52A8A59CF00D0F842 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A9A42A8A59CF00D0F842 /* UIControl+TestHelpers.swift */; };
@@ -69,6 +68,7 @@
 		D374A61C2A93BA4F0097682F /* FeedImagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374A61B2A93BA4F0097682F /* FeedImagePresenterTests.swift */; };
 		D374A61E2A93C09A0097682F /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374A61D2A93C09A0097682F /* FeedImagePresenter.swift */; };
 		D374A6202A93C11B0097682F /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374A61F2A93C11B0097682F /* FeedImageViewModel.swift */; };
+		D374A6212A93C2490097682F /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D300A9972A8A57C600D0F842 /* FeedImageDataLoader.swift */; };
 		D38F2A612A912E63001D4EB5 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38F2A602A912E63001D4EB5 /* Feed.storyboard */; };
 		D38F2A632A912F06001D4EB5 /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38F2A622A912F06001D4EB5 /* Feed.xcassets */; };
 		D393405E2A597BA80032A997 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393405D2A597BA80032A997 /* RemoteFeedLoader.swift */; };
@@ -287,14 +287,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		D300A99B2A8A581300D0F842 /* Feed Image Loader */ = {
-			isa = PBXGroup;
-			children = (
-				D300A9972A8A57C600D0F842 /* FeedImageDataLoader.swift */,
-			);
-			path = "Feed Image Loader";
-			sourceTree = "<group>";
-		};
 		D300A99C2A8A582600D0F842 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,13 +335,6 @@
 				D3A642E22A91523600C33265 /* FeedViewAdapter.swift */,
 			);
 			path = Composers;
-			sourceTree = "<group>";
-		};
-		D300A9B62A8A691500D0F842 /* Feed Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
 		D32B6B1B2A82B29300D31CF7 /* FeedStoreSpecs */ = {
@@ -408,8 +393,6 @@
 		D352EC8A2A87A8740089FEE9 /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				D300A99B2A8A581300D0F842 /* Feed Image Loader */,
-				D300A9B62A8A691500D0F842 /* Feed Presentation */,
 				D300A9992A8A57FC00D0F842 /* Feed UI */,
 			);
 			path = EssentialFeediOS;
@@ -593,6 +576,7 @@
 			children = (
 				D3EC353F2A532C0E00B4F797 /* FeedImage.swift */,
 				D3EC35412A532C5B00B4F797 /* FeedLoader.swift */,
+				D300A9972A8A57C600D0F842 /* FeedImageDataLoader.swift */,
 			);
 			path = "Feed Feature";
 			sourceTree = "<group>";
@@ -850,7 +834,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D300A9982A8A57C600D0F842 /* FeedImageDataLoader.swift in Sources */,
 				D374A5F52A93A8150097682F /* ErrorView.swift in Sources */,
 				D374A5FA2A93ABC50097682F /* UIRefreshControl+Helpers.swift in Sources */,
 				D3CB430A2A9139C600F25438 /* UITableView+Dequeueing.swift in Sources */,
@@ -918,6 +901,7 @@
 				D3E772A22A7BF93600B4D3D5 /* URLSessionHTTPClient.swift in Sources */,
 				D32B6B212A82B39C00D31CF7 /* CoreDataFeedStore.swift in Sources */,
 				D374A6192A93B8690097682F /* FeedErrorViewModel.swift in Sources */,
+				D374A6212A93C2490097682F /* FeedImageDataLoader.swift in Sources */,
 				D374A6172A93B84A0097682F /* FeedLoadingViewModel.swift in Sources */,
 				D374A61E2A93C09A0097682F /* FeedImagePresenter.swift in Sources */,
 				D32B6B2E2A82B6A900D31CF7 /* FeedStore.xcdatamodeld in Sources */,
