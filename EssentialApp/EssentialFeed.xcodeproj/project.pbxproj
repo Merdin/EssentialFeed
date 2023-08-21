@@ -1517,7 +1517,7 @@
 				D38EF18F2A93DC1600C19903 /* FeedStore2.xcdatamodel */,
 				D32B6B2D2A82B6A900D31CF7 /* FeedStore.xcdatamodel */,
 			);
-			currentVersion = D32B6B2D2A82B6A900D31CF7 /* FeedStore.xcdatamodel */;
+			currentVersion = D38EF18F2A93DC1600C19903 /* FeedStore2.xcdatamodel */;
 			path = FeedStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
