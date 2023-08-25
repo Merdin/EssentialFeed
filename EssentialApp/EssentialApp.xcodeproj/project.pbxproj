@@ -54,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D3438C3B2A990BFF0058AC78 /* EssentialApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialApp.xctestplan; sourceTree = "<group>"; };
 		D38EF1D92A963DC000C19903 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38EF1DC2A963DC000C19903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D38EF1DE2A963DC000C19903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3438C3A2A990BEF0058AC78 /* Test Plans */ = {
+			isa = PBXGroup;
+			children = (
+				D3438C3B2A990BFF0058AC78 /* EssentialApp.xctestplan */,
+			);
+			path = "Test Plans";
+			sourceTree = "<group>";
+		};
 		D38EF1D02A963DC000C19903 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +143,7 @@
 		D38EF1F22A963DC100C19903 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3438C3A2A990BEF0058AC78 /* Test Plans */,
 				D38EF21C2A9655A200C19903 /* Helpers */,
 				D38EF2142A96414F00C19903 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				D38EF2182A96497700C19903 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
