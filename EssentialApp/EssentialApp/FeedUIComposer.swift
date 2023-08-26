@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import Combine
 import EssentialFeed
 import EssentialFeediOS
 
 public final class FeedUIComposer {
 	private init() {}
 	
-	public static func feedComposerdWith(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedViewController {
-		let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: MainQueueDispatchDecorator(decoratee: feedLoader))
+	public static func feedComposerdWith(feedLoader: @escaping () -> FeedLoader.Publisher, imageLoader: FeedImageDataLoader) -> FeedViewController {
+		let presentationAdapter = FeedLoaderPresentationAdapter(
+			feedLoader: { feedLoader().dispatchOnMainQueue() }
+		)
 		
 		let feedController = makeFeedViewController(
 			delegate: presentationAdapter,

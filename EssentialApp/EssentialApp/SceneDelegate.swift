@@ -7,8 +7,8 @@
 
 import UIKit
 import CoreData
+import Combine
 import EssentialFeed
-import EssentialFeediOS
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -44,20 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 
 	func configureWindow() {
-		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-
-		let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: httpClient)
 		let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
-
 		let localImageLoader = LocalFeedImageDataLoader(store: store)
 
 		window?.rootViewController = UINavigationController(
 			rootViewController: FeedUIComposer.feedComposerdWith(
-			feedLoader: FeedLoaderWithFallbackComposite(
-				primary: FeedLoaderCacheDecorator(
-					decoratee: remoteFeedLoader,
-					cache: localFeedLoader),
-				fallback: localFeedLoader),
+			feedLoader: makeRemoteFeedLoaderWithLocalFallback,
 			imageLoader: FeedImageDataLoaderWithFallbackComposite(
 				primary: localImageLoader,
 				fallback: FeedImageDataLoaderCacheDecorator(
@@ -67,6 +59,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		)
 
 		window?.makeKeyAndVisible()
+	}
+
+	private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
+		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
+
+		let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: httpClient)
+
+		return remoteFeedLoader
+			.loadPublisher()
+			.caching(to: localFeedLoader)
+			.fallback(to: localFeedLoader.loadPublisher)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
@@ -94,5 +97,77 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// Called as the scene transitions from the foreground to the background.
 		// Use this method to save data, release shared resources, and store enough scene-specific state information
 		// to restore the scene back to its current state.
+	}
+}
+
+extension FeedLoader {
+	public typealias Publisher = AnyPublisher<[FeedImage], Error>
+
+	public func loadPublisher() -> Publisher {
+		return Deferred {
+			Future(self.load)
+		}
+		.eraseToAnyPublisher()
+	}
+}
+
+extension Publisher where Output == [FeedImage] {
+	func caching(to cache: FeedCache) -> AnyPublisher<Output, Failure> {
+		handleEvents(receiveOutput: cache.saveIgnoringResult)
+			.eraseToAnyPublisher()
+	}
+}
+
+private extension FeedCache {
+	func saveIgnoringResult(_ feed: [FeedImage]) {
+		save(feed) { _ in }
+	}
+}
+
+extension Publisher {
+	func fallback(to fallbackPublisher: @escaping () -> AnyPublisher<Output, Failure>) -> AnyPublisher<Output, Failure> {
+		self.catch{ _ in fallbackPublisher() }.eraseToAnyPublisher()
+	}
+}
+
+extension Publisher {
+	func dispatchOnMainQueue() -> AnyPublisher<Output, Failure> {
+		receive(on: DispatchQueue.immediateWhenOnMainQueueScheduler).eraseToAnyPublisher()
+	}
+}
+
+extension DispatchQueue {
+
+	static var immediateWhenOnMainQueueScheduler: ImmediateWhenOnMainQueueScheduler {
+		ImmediateWhenOnMainQueueScheduler()
+	}
+
+	struct ImmediateWhenOnMainQueueScheduler: Scheduler {
+		typealias SchedulerTimeType = DispatchQueue.SchedulerTimeType
+		typealias SchedulerOptions = DispatchQueue.SchedulerOptions
+
+		var now: DispatchQueue.SchedulerTimeType {
+			DispatchQueue.main.now
+		}
+
+		var minimumTolerance: DispatchQueue.SchedulerTimeType.Stride {
+			DispatchQueue.main.minimumTolerance
+		}
+
+		func schedule(options: DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Void) {
+			guard Thread.isMainThread else {
+				return DispatchQueue.main.schedule(options: options, action)
+			}
+
+			action()
+		}
+
+		func schedule(after date: DispatchQueue.SchedulerTimeType, tolerance: DispatchQueue.SchedulerTimeType.Stride, options: DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Void) {
+			DispatchQueue.main.schedule(after: date, tolerance: tolerance, options: options, action)
+		}
+
+		func schedule(after date: DispatchQueue.SchedulerTimeType, interval: DispatchQueue.SchedulerTimeType.Stride, tolerance: DispatchQueue.SchedulerTimeType.Stride, options: DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Void) -> Cancellable {
+			DispatchQueue.main.schedule(after: date, interval: interval, tolerance: tolerance, options: options, action)
+		}
 	}
 }
