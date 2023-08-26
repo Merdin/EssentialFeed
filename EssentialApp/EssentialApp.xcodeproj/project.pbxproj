@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3036D1C2A99867A00ABF4D0 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3036D1B2A99867A00ABF4D0 /* CombineHelpers.swift */; };
 		D3438C452A9910680058AC78 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3438C442A9910680058AC78 /* FeedImageDataLoaderSpy.swift */; };
 		D3438C472A99111F0058AC78 /* XCTestCase+FeedImageDataLoaderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3438C462A99111F0058AC78 /* XCTestCase+FeedImageDataLoaderTestCase.swift */; };
 		D36744F22A99237700A7247A /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36744F12A99237700A7247A /* SceneDelegateTests.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D3036D1B2A99867A00ABF4D0 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		D3438C3B2A990BFF0058AC78 /* EssentialApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialApp.xctestplan; sourceTree = "<group>"; };
 		D3438C442A9910680058AC78 /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		D3438C462A99111F0058AC78 /* XCTestCase+FeedImageDataLoaderTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoaderTestCase.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				D38EF1DC2A963DC000C19903 /* AppDelegate.swift */,
 				D38EF1DE2A963DC000C19903 /* SceneDelegate.swift */,
+				D3036D1B2A99867A00ABF4D0 /* CombineHelpers.swift */,
 				D36744F82A99260D00A7247A /* FeedUIComposer.swift */,
 				D36744F52A99260D00A7247A /* WeakRefVirtualProxy.swift */,
 				D36744F32A99260D00A7247A /* FeedImageDataLoaderPresentationAdapter.swift */,
@@ -325,6 +328,7 @@
 			files = (
 				D36744FE2A99260D00A7247A /* FeedViewAdapter.swift in Sources */,
 				D36744FC2A99260D00A7247A /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
+				D3036D1C2A99867A00ABF4D0 /* CombineHelpers.swift in Sources */,
 				D38EF1E12A963DC000C19903 /* ViewController.swift in Sources */,
 				D38EF1DD2A963DC000C19903 /* AppDelegate.swift in Sources */,
 				D38EF1DF2A963DC000C19903 /* SceneDelegate.swift in Sources */,
