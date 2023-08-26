@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class ImageCommentsMapperTests: XCTestCase {
+class RemoteFeedImageDataLoaderTests: XCTestCase {
 	
 	func test_init_doesNotPerformAnyURLRequest() {
 		let (_, client) = makeSUT()
