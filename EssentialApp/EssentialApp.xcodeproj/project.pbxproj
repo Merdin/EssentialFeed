@@ -126,9 +126,9 @@
 		D38EF1D02A963DC000C19903 = {
 			isa = PBXGroup;
 			children = (
-				D3438C3A2A990BEF0058AC78 /* Test Plans */,
 				D38EF1DB2A963DC000C19903 /* EssentialApp */,
 				D38EF1F22A963DC100C19903 /* EssentialAppTests */,
+				D3438C3A2A990BEF0058AC78 /* Test Plans */,
 				D38EF1DA2A963DC000C19903 /* Products */,
 				D38EF20C2A963F3700C19903 /* Frameworks */,
 			);
