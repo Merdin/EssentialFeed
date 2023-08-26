@@ -504,8 +504,6 @@
 				D374A6292A93CFE90097682F /* Helpers */,
 				D393405D2A597BA80032A997 /* RemoteFeedLoader.swift */,
 				D39340612A59ABCE0032A997 /* FeedItemMapper.swift */,
-				D395FC6F2A9A16F60040C75B /* RemoteImageCommentsLoader.swift */,
-				D395FC712A9A17620040C75B /* ImageCommentsMapper.swift */,
 				D3740F462A7E962100F23B18 /* RemoteFeedItem.swift */,
 				D374A6272A93CC530097682F /* RemoteFeedImageDataLoader.swift */,
 			);
@@ -517,7 +515,6 @@
 			children = (
 				D374A6262A93CBB70097682F /* Helpers */,
 				D3EC35442A532DB500B4F797 /* LoadFeedFromRemoteUseCaseTests.swift */,
-				D395FC6D2A9A16490040C75B /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 				D374A6222A93C5040097682F /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
 			);
 			path = "Feed API";
@@ -571,6 +568,23 @@
 			path = "Shared API Infra";
 			sourceTree = "<group>";
 		};
+		D395FC7B2A9A20530040C75B /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				D395FC6F2A9A16F60040C75B /* RemoteImageCommentsLoader.swift */,
+				D395FC712A9A17620040C75B /* ImageCommentsMapper.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		D395FC7C2A9A209A0040C75B /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				D395FC6D2A9A16490040C75B /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
 		D3E7729E2A7BED2800B4D3D5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +628,7 @@
 				D395FC762A9A1FA90040C75B /* Shared API */,
 				D395FC772A9A1FC20040C75B /* Shared API Infra */,
 				D395FC732A9A1AE20040C75B /* Image Comments Feature */,
+				D395FC7B2A9A20530040C75B /* Image Comments API */,
 				D3740F412A7E784800F23B18 /* Feed Cache */,
 				D3EC35432A532CE100B4F797 /* Feed Feature */,
 				D393405C2A597B8C0032A997 /* Feed API */,
@@ -629,6 +644,7 @@
 				D3E7729E2A7BED2800B4D3D5 /* Helpers */,
 				D395FC782A9A1FD40040C75B /* Shared API */,
 				D395FC7A2A9A1FF20040C75B /* Shared API Infra */,
+				D395FC7C2A9A209A0040C75B /* Image Comments API */,
 				D3740F3E2A7C29E800F23B18 /* Feed Cache */,
 				D39340632A59AFF00032A997 /* Feed API */,
 				D374A5FB2A93ACE80097682F /* Feed Presentation */,
